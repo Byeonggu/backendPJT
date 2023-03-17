@@ -15,14 +15,17 @@ public interface SongDAO {
 		public Song selectOne(int id) throws SQLException;
 		
 		//게시글 등록
-		public void insertBoard(Song song) throws SQLException;
+		public void insertSongs(Song song) throws SQLException;
 		
 		//게시글 삭제 
-		public void deleteBoard(int id) throws SQLException;
+		public void deleteSongs(int id) throws SQLException;
 		
 		//게시글 수정
-		public void updateBoard(Song board) throws SQLException;
+		public void updateSongs(Song song) throws SQLException;
 		
 		//조회수 증가
 		public void updateViewCnt(int id) throws SQLException;
+		
+		
+		public Song updateForm(int id) throws SQLException;
 }

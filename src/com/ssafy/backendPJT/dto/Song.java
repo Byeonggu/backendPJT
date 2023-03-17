@@ -57,6 +57,11 @@ public class Song {
 	public void setViewCnt(int viewCnt) {
 		this.viewCnt = viewCnt;
 	}
+	
+	public Song() {
+		
+	}
+	
 	public Song(int id, String title, String writer, String content, String url, String imgUrl, String regDate,
 			int viewCnt) {
 		super();
