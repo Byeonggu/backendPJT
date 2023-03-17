@@ -6,7 +6,41 @@
 <head>
 <meta charset="UTF-8">
 <title>글등록</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h2 {
+        color: #333;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 0 auto;
+    }
+    input[type="text"], textarea {
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
 </head>
+
 <body>
 	<h2>글등록</h2>
 	<form action="main" method="POST">

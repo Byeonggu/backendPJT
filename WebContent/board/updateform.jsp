@@ -5,10 +5,45 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글수저ㅏㅇ</title>
+<title>글 수정</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    h2 {
+        color: #333;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 0 auto;
+    }
+    input[type="text"], textarea {
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
 </head>
 <body>
-	<h2>글수정</h2>
+	<h2>글 수정</h2>
 	<form action="main" method="POST">
 		<input type ="hidden" name ="act" value="update">
 		<input type ="hidden" name ="id" value="${song.id}">
