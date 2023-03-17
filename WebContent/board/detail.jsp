@@ -23,7 +23,7 @@
 		등록일 : ${song.regDate}
 	</div>
 	<div>
-		<img src="${song.imgurl}  width="100" height="50">
+		<img src="${song.imgurl}"  width="350" height="300">
 	</div>
 	<div>
 		<a href="${song.url}">영상 보러가기</a>
@@ -33,8 +33,8 @@
 	</div>
 	
 	
-	
-	<a href="board?act=updateform&id=${board.id }">수정</a>
-	<a href="board?act=delete&id=${board.id }">삭제</a>
+	<a href="main?act=list">목록으로</a>
+	<a href="main?act=updateform&id=${song.id}">수정</a>
+	<a href="main?act=delete&id=${song.id}">삭제</a>
 </body>
 </html>

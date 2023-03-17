@@ -35,7 +35,7 @@ public class SongDAOImpl implements SongDAO {
 		try {
 			conn = util.getConnection();
 			stmt = conn.createStatement();
-			String sql = "SELECT * FROM SONGS";
+			String sql = "SELECT * FROM SONGS ORDER BY viewcnt DESC";
 
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
@@ -47,7 +47,7 @@ public class SongDAOImpl implements SongDAO {
 				song.setViewCnt(rs.getInt("viewcnt"));
 				song.setRegDate(rs.getString("regdate"));
 				song.setUrl(rs.getString("url"));
-				song.setImgUrl(rs.getString("imgurl"));
+				song.setImgurl(rs.getString("imgurl"));
 				list.add(song);
 			}
 			rs.close();
@@ -83,7 +83,7 @@ public class SongDAOImpl implements SongDAO {
 				song.setViewCnt(rs.getInt(5));
 				song.setRegDate(rs.getString(6));
 				song.setUrl(rs.getString(7));
-				song.setImgUrl(rs.getString(8));
+				song.setImgurl(rs.getString(8));
 			}
 		} finally {
 			util.close(rs, pstmt, conn);
@@ -105,7 +105,7 @@ public class SongDAOImpl implements SongDAO {
 			pstmt.setString(3, song.getContent());
 			pstmt.setInt(4,song.getViewCnt());
 			pstmt.setString(5,song.getUrl());
-			pstmt.setString(6, song.getImgUrl());
+			pstmt.setString(6, song.getImgurl());
 			pstmt.executeUpdate();		
 		}finally {
 			util.close(pstmt,conn);
@@ -114,7 +114,7 @@ public class SongDAOImpl implements SongDAO {
 
 	@Override
 	public void deleteSongs(int id) throws SQLException {
-		String sql = "DELETE FROM SONGS WHERE id =? ";
+		String sql = "DELETE FROM SONGS WHERE id =?";
 	
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -132,7 +132,7 @@ public class SongDAOImpl implements SongDAO {
 
 	@Override
 	public void updateSongs(Song song) throws SQLException {
-		String sql = "UPDATE SONGS SET title =? content =? regdate=NOW() url =? imgurl=? WHERE id=?";
+		String sql = "UPDATE SONGS SET title =?, content =?, regdate=NOW(), url =?, imgurl=? WHERE id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -141,7 +141,7 @@ public class SongDAOImpl implements SongDAO {
 			pstmt.setString(1, song.getTitle());
 			pstmt.setString(2, song.getContent());
 			pstmt.setString(3, song.getUrl());
-			pstmt.setString(4, song.getImgUrl());
+			pstmt.setString(4, song.getImgurl());
 			pstmt.setInt(5, song.getId());
 			pstmt.executeUpdate();
 		}finally {
@@ -179,6 +179,8 @@ public class SongDAOImpl implements SongDAO {
 			conn = util.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
+			
+			rs= pstmt.executeQuery();
 			while (rs.next()) {
 				song.setId(rs.getInt(1));
 				song.setTitle(rs.getString(2));
@@ -187,7 +189,7 @@ public class SongDAOImpl implements SongDAO {
 				song.setViewCnt(rs.getInt(5));
 				song.setRegDate(rs.getString(6));
 				song.setUrl(rs.getString(7));
-				song.setImgUrl(rs.getString(8));
+				song.setImgurl(rs.getString(8));
 			}
 		} finally {
 			util.close(rs, pstmt, conn);

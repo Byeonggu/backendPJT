@@ -8,6 +8,6 @@
 <title>index page</title>
 </head>
 <body>
-<a href="board?act=list">목록조회</a>
+<a href="main?act=list">목록조회</a>
 </body>
 </html>

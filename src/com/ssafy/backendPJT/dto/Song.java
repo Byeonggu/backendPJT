@@ -6,7 +6,7 @@ public class Song {
 	private String writer;
 	private String content;
 	private String url;
-	private String imgUrl;
+	private String imgurl;
 	private String regDate;
 	private int viewCnt;
 	public int getId() {
@@ -39,11 +39,11 @@ public class Song {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public String getImgUrl() {
-		return imgUrl;
+	public String getImgurl() {
+		return imgurl;
 	}
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
 	}
 	public String getRegDate() {
 		return regDate;
@@ -62,7 +62,7 @@ public class Song {
 		
 	}
 	
-	public Song(int id, String title, String writer, String content, String url, String imgUrl, String regDate,
+	public Song(int id, String title, String writer, String content, String url, String imgurl, String regDate,
 			int viewCnt) {
 		super();
 		this.id = id;
@@ -70,14 +70,14 @@ public class Song {
 		this.writer = writer;
 		this.content = content;
 		this.url = url;
-		this.imgUrl = imgUrl;
+		this.imgurl = imgurl;
 		this.regDate = regDate;
 		this.viewCnt = viewCnt;
 	}
 	@Override
 	public String toString() {
 		return "song [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", url=" + url
-				+ ", imgUrl=" + imgUrl + ", regDate=" + regDate + ", viewCnt=" + viewCnt + "]";
+				+ ", imgUrl=" + imgurl + ", regDate=" + regDate + ", viewCnt=" + viewCnt + "]";
 	}
 	
 	

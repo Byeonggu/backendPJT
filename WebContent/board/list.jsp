@@ -22,13 +22,18 @@
 		<c:forEach items="${list}" var="song">
 			<tr>
 				<th>${song.id}</th>
-				<th><a href="board?act=detail&id=${song.id}">${song.title}</a></th>
+				<th><a href="main?act=detail&id=${song.id}">${song.title}</a></th>
 				<th>${song.writer}</th>
 				<th>${song.viewCnt}</th>
 				<th>${song.regDate}</th>
 			</tr>
 		
 		</c:forEach>
+		 
+		
+		
 	</table>
+	
+	<a href="<%=request.getContextPath()%>/main?act=writeform">글등록</a>
 </body>
 </html>
